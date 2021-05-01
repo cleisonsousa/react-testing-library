@@ -16,6 +16,9 @@ test('renders a number input with a label "Favorite Number"', () => {
   render(<FavoriteNumber />)
   // debug()
   // const input = getByLabelText(/favorite number/i)
+
+  // This line is a trigger for FALSE POSITIVO whe UI is broken but the TEST continue works.
+  // expect(div.querySelector('label')).toHaveTextContent('Favorite Number')
   const input = screen.getByLabelText(/favorite number/i)
   expect(input).toHaveAttribute('type', 'number')
   // debug(input)
